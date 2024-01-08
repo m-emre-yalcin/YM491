@@ -78,6 +78,7 @@ function OptionsPage(props: { theme: Theme; onThemeChange: (theme: Theme) => voi
             )
           })}
         </Radio.Group>
+
         <Text h3 className="mt-5">
           Tema
         </Text>
@@ -90,36 +91,6 @@ function OptionsPage(props: { theme: Theme; onThemeChange: (theme: Theme) => voi
             )
           })}
         </Radio.Group>
-        <Text h3 className="mt-5 mb-0">
-          Dil
-        </Text>
-        <Text className="my-1">
-        ChatGPT'nin yanıtlarında kullanılan dil. <span className="italic">Otomatik</span> önerilir.
-        </Text>
-        <Select
-          value={language}
-          placeholder="Choose one"
-          onChange={(val) => onLanguageChange(val as Language)}
-        >
-          {Object.entries(Language).map(([k, v]) => (
-            <Select.Option key={k} value={v}>
-              {capitalize(v)}
-            </Select.Option>
-          ))}
-        </Select>
-        <Text h3 className="mt-5 mb-0">
-          AI Sağlayıcı
-        </Text>
-        <ProviderSelect />
-        <Text h3 className="mt-8">
-          Diğer
-        </Text>
-        <div className="flex flex-row items-center gap-4">
-          <Toggle initialChecked disabled />
-          <Text b margin={0}>
-            Search tarafından oluşturulan konuşmaları otomatik sil
-          </Text>
-        </div>
       </main>
     </div>
   )
